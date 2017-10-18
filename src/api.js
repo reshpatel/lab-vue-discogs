@@ -17,3 +17,13 @@ export function searchArtists(query){
     return null;
   });
 }
+
+  export function getArtist(id){
+    return discogs.get(`/artists/${id}`).then(response =>{
+      return response.data;
+    })
+    .catch(err => {
+      console.error(err);
+      return null;
+    });
+}

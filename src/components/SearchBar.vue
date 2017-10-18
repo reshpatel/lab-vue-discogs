@@ -1,3 +1,4 @@
+<!-- todo how to connect and ask to yacine -->
 <template>
   <div>
     <div class="field has-addons">
@@ -11,7 +12,11 @@
       </div>
     </div>
 
-  <thumbnails-list v-for="artist in artists"></thumbnails-list>
+  <!-- <thumbnails-list v-for="artist in artists"></thumbnails-list> -->
+  <div v-if="artists.length>0">
+      <router-link v-for="artist in artists" :to="'/artists/'+ artist.id">
+        <img :src="artist.thumb"></router-link>
+  </div>
   </div>
 </template>
 
